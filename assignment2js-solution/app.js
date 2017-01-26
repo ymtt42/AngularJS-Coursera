@@ -11,8 +11,6 @@ ToBuyController.inject=['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
    var list=this;
    list.items=ShoppingListCheckOffService.getToBuyItems();
-   console.log(list.items);
-   console.log(list.items[0].quantity);
    list.tickItem= function (itemIndex) {
      ShoppingListCheckOffService.tickItem(itemIndex);
    }
@@ -27,7 +25,7 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 function ShoppingListCheckOffService() {
   var service=this;
 
-  var itemToBuy=[{name: "cookies", quantity: 10 }, { name: "cookies", quantity: 10 }, { name: "cookies", quantity: 10 }];
+  var itemToBuy=[{name: "cookies", quantity: 10 }, { name: "Donuts", quantity: 10 }, { name: "bottles", quantity: 10 }];
   //console.log(itemToBuy);
   var itemBought=[];
 
@@ -37,9 +35,6 @@ function ShoppingListCheckOffService() {
       quantity: itemToBuy[itemIndex].quantity
     };
     itemBought.push(item);
-    console.log(item);
-    console.log(itemBought);
-
     itemToBuy.splice(itemIndex,1);
   };
 
