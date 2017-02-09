@@ -9,41 +9,25 @@
     <link rel="stylesheet" href="styles/styles.css">
     <title>Narrow Down Your Menu Choice</title>
   </head>
-  <body>
+  <body ng-controller='NarrowItDownController as list'>
 
-    <div class="container" ng-controller='NarrowItDownController as list'>
-     <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <div class="container" >
+       <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-     <div class="form-group">
-       <input type="text" placeholder="search term" class="form-control" ng-model="list.searchTerm">
+       <div class="form-group">
+         <input type="text" placeholder="search term" class="form-control" ng-model="list.searchTerm">
+       </div>
+       <div class="form-group narrow-button">
+         <button class="btn btn-primary" ng-click='list.getMatchMenuItems(list.searchTerm);'>Narrow It Down For Me!</button>
+       </div>
      </div>
-     <div class="form-group narrow-button">
-       <button class="btn btn-primary" ng-click='list.getMatchMenuItems(list.searchTerm);'>Narrow It Down For Me!</button>
-     </div>
-     <div>
-  <!--  <h3>List of Match items</h3>
-       <ul>
-         <li ng-repeat="item in list.foundItems">
-           {{ item.name }} : {{ item.description }}
-         </li>
-       </ul>
-     </div> -->
 
-     <!-- found-items should be implemented as a component -->
-     <found-items my-list="list" > </found-items>
+     <div class="container">
 
-     <!--<div ng-controller='MenuCategoriesController as menu'> -->
-       <h3>List of Menu Categories</h3>
-       <ul>
-         <li ng-repeat="category in list.categories">
-           (<a href="" ng-click="list.logMenuItems(category.short_name);">{{ category.short_name }}</a>)
-           {{ category.name }}
-         </li>
-       </ul>
-     <!--</div> -->
-   </div>
-
-
-
+       <table class="results">
+         <!-- found-items should be implemented as a component -->
+         <found-items my-list="list" > </found-items>
+       </table>
+    </div>
   </body>
 </html>

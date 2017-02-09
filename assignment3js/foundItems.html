@@ -1,7 +1,18 @@
-<h3>List of Match items</h3>
-<ol>
-  <li ng-repeat="item in list.foundItems">
-    {{ item.name }}: {{ item.description }}
-    <button ng-click="list.removeItem($index);">Remove Item</button>
-  </li>
-</ol>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Item Short Name</th>
+        <th>Item description</th>
+        <th>Remove from short list</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in list.foundItems">
+        <td>{{ item.name }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.description }}</td>
+        <td><button ng-click="list.removeItem($index);">Remove Item</button></td>
+      </tr>
+    </tbody>
+  </table>
