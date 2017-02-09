@@ -1,0 +1,7 @@
+<h3>List of Match items</h3>
+<ol>
+  <li ng-repeat="item in list.foundItems">
+    {{ item.name }}: {{ item.description }}
+    <button ng-click="list.removeItem($index);">Remove Item</button>
+  </li>
+</ol>
