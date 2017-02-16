@@ -8,8 +8,7 @@ MenuDataService.$inject = ['$http']
 function MenuDataService($http) {
   var service = this;
 
-  // List of shopping items
-  var items = [];
+  // List of menu categories
 
   service.getAllCategories = function() {
     var response = $http({
@@ -20,6 +19,8 @@ function MenuDataService($http) {
     return response;
 
   };
+
+  //List of items in categories
 
   service.getItemsForCategory= function (categoryShortName) {
     var response = $http({

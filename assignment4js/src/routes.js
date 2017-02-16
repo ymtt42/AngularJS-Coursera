@@ -31,25 +31,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  // .state('items', {
-  //   url: '/items/{itemId}',
-  //   templateUrl: 'src/menuapp/template/main-items.template.html',
-  //   controller: 'ItemsController as items',
-  //   resolve: {
-  //     item: ['$stateParams', 'MenuDataService',
-  //           function ($stateParams, MenuDataService) {
-  //             return MenuDataService.getItemsForCategory(categoryShortName);
-  //           }]
-  //   }
-  // })
 
   .state('items', {
-    url: '/items',
+    url: '/items/{itemId}',
     templateUrl: 'src/menuapp/template/main-items.template.html',
     controller: 'ItemsController as itemsList',
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.getItemsForCategory("SO");
+      items: ['$stateParams','MenuDataService', function ($stateParams,MenuDataService) {
+        return MenuDataService.getItemsForCategory($stateParams.itemId);
       }]
     }
   })

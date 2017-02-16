@@ -9,7 +9,7 @@ CategoriesListController.$inject = ['items'];
 function CategoriesListController(items) {
   var categorieslist = this;
   categorieslist.items = items.data;
-  console.log(categorieslist.items);
+//  console.log(categorieslist.items);
 }
 
 })();
