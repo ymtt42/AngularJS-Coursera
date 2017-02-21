@@ -54,12 +54,10 @@
 
         <input type="text" name="favoritedish" placeholder="Your favorite dish e.g, SO1"
         ng-model="reg.user.favoritedish"
-        required
-        minlength="2"
-        ng-maxlength="3">
+        required>
         {{ reg.user.favoritedish }}
         <span
-          ng-if="(regForm.favoritedish.$error.minlength || regForm.favoritedish.$error.required) && regForm.favoritedish.$touched">
+          ng-if="(regForm.favoritedish.$error.required) && regForm.favoritedish.$touched">
           Favorite Dish must be at a short name item of the menu
         </span>
         <br>
@@ -69,18 +67,11 @@
           ng-click="reg.submit()">Submit</button>
 
           <div style="margin-top: 10px;">
-            Form valid? {{ regForm.$valid }}
+            {{reg.message}}
+          <!--  Form valid? {{ regForm.$valid }} -->
           </div>
       </form>
     </fieldset>
 
-    <div id="info" ng-if="reg.completed">
-      Firstname: {{ reg.user.firstname}} <br>
-      Lastname: {{ reg.user.lastname}} <br>
-      Email: {{ reg.user.email}} <br>
-      Phone: {{ reg.user.phone }}<br>
-      Favorite Dish: {{ reg.user.favoritedish}}
-
-    </div>
 
 </div>
