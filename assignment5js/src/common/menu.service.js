@@ -37,6 +37,12 @@ function MenuService($http, ApiPath) {
     //console.log(item);
 
   };
+  service.getItem = function(short_name) {
+    return $http.get(ApiPath + '/menu_items/'+short_name+'.json')
+    .then(function (response) {
+      return response.data;
+    });
+  }
 
   service.setUser=function(newItem){
     item=newItem;

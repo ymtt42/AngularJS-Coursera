@@ -1,9 +1,29 @@
 
 <div class="container">
-  <h1 ng-controller="ProfileController as profile">Profile</h1>
-First Name : {{profile.firstname}} <br>
-Last Name : {{profile.lastname}} <br>
-Email : {{profile.email}}<br>
-Phone : {{profile.phone}}<br>
-Favoritedish :{{profile.favoritedish}}
+
+  <h1 ng-controller="ProfileController as profileCtrl">Profile</h1>
+  <div ng-if="profileCtrl.userNotDefined()">
+    Create your profile first <a ui-sref="public.sign-up" >  here </a>
+  </div>
+
+  <div ng-if="!(profileCtrl.userNotDefined())">
+    <div>
+    First Name : {{profileCtrl.firstname}} <br>
+    Last Name : {{profileCtrl.lastname}} <br>
+    Email : {{profileCtrl.email}}<br>
+    Phone : {{profileCtrl.phone}}<br>
+    Favoritedish :{{profileCtrl.favoritedish}}
+    </div>
+
+
+    <div class="menu-item-photo">
+      <img class="img-responsive" width="250" height="150" ng-src="{{profileCtrl.path}}{{profileCtrl.item.short_name}}.jpg" alt="{{profile.item.name}}">
+    </div>
+
+    <div>
+      <h3>{{profileCtrl.item.name}}</h3>
+      <p>{{profileCtrl.item.description}}</p>
+    </div>
+  </div>
+
 </div>

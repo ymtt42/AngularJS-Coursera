@@ -35,11 +35,17 @@ function routeConfig ($stateProvider) {
         url: '/myinfo',
         templateUrl: 'src/public/registration/myprofile.html',
         controller: 'ProfileController',
-        controllerAs: 'profile'
+        controllerAs: 'profileCtrl',
         // resolve: {
-        //   menuCategories: ['MenuService', function (MenuService) {
-        //     return MenuService.getCategories();
+        //   itemDetails: ['MenuService', function (MenuService) {
+        //     return MenuService.getItem("SO1");
         //   }]
+        // }
+        resolve: {
+          menuCategories: ['MenuService', function (MenuService) {
+            return MenuService.getCategories();
+          }]
+        }
       })
 
     .state('public.menu', {
