@@ -3,7 +3,7 @@
 
   <h1 ng-controller="ProfileController as profileCtrl">Profile</h1>
   <div ng-if="profileCtrl.userNotDefined()">
-    Create your profile first <a ui-sref="public.sign-up" >  here </a>
+    Not Signed Up Yet. <a ui-sref="public.sign-up" >  Sign up Now! </a>
   </div>
 
   <div ng-if="!(profileCtrl.userNotDefined())">

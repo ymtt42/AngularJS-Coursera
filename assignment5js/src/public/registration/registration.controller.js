@@ -17,11 +17,11 @@ $ctrl.message="";
     var promise = MenuService.checkItem($ctrl.user.favoritedish);
   promise.then(function(result) {
     if(!(result=="Wrong item")){
-      console.log(result);
-      console.log($ctrl.user);
+//      console.log(result);
+//      console.log($ctrl.user);
       MenuService.setUser($ctrl.user);
       $ctrl.message="Your information has been saved"
-      console.log(MenuService.getUser());
+//      console.log(MenuService.getUser());
     }
     else {
       $ctrl.message="No such menu number exists";

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 ng-controller="RegistrationController as reg">Simple Form Validation</h1>
+  <h1 ng-controller="RegistrationController as reg">Please sign-up here for our newsletter !</h1>
 
     <fieldset>
       <legend>Registration</legend>
@@ -10,7 +10,6 @@
         required
         minlength="2"
         ng-maxlength="20">
-        {{ reg.user.firstname }}
         <span
           ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
           Firstname must be at least 2 characters long
@@ -26,7 +25,6 @@
         required
         minlength="2"
         ng-maxlength="20">
-        {{ reg.user.lastname }}
         <span
           ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
           lastname must be at least 2 characters long
@@ -56,7 +54,6 @@
         <input type="text" name="favoritedish" placeholder="Your favorite dish e.g, SO1"
         ng-model="reg.user.favoritedish"
         required>
-        {{ reg.user.favoritedish }}
         <span
           ng-if="(regForm.favoritedish.$error.required) && regForm.favoritedish.$touched">
           Favorite Dish must be at a short name item of the menu

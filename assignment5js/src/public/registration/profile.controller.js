@@ -14,10 +14,10 @@ var user=MenuService.getUser();
 $ctrl.userNotDefined=function() {
   if(user.length==0) {
     return true;
-    console.log("User not defined");
+//    console.log("User not defined");
   }
   else {
-    console.log ("user defined?");
+//    console.log ("user defined?");
     return false;
   }
 }
@@ -33,7 +33,7 @@ $ctrl.userNotDefined=function() {
     if(!(result=="Wrong item")){
 
       $ctrl.item=result;
-      console.log(result);
+  //    console.log(result);
 
     }
     else {
